@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/mimikyu/static/css/main.7a67d8a2.chunk.css",
+    "main.js": "/mimikyu/static/js/main.066f17f3.chunk.js",
+    "main.js.map": "/mimikyu/static/js/main.066f17f3.chunk.js.map",
+    "runtime-main.js": "/mimikyu/static/js/runtime-main.548d30e5.js",
+    "runtime-main.js.map": "/mimikyu/static/js/runtime-main.548d30e5.js.map",
+    "static/js/2.341d9a15.chunk.js": "/mimikyu/static/js/2.341d9a15.chunk.js",
+    "static/js/2.341d9a15.chunk.js.map": "/mimikyu/static/js/2.341d9a15.chunk.js.map",
+    "static/js/3.56165031.chunk.js": "/mimikyu/static/js/3.56165031.chunk.js",
+    "static/js/3.56165031.chunk.js.map": "/mimikyu/static/js/3.56165031.chunk.js.map",
+    "index.html": "/mimikyu/index.html",
+    "static/css/main.7a67d8a2.chunk.css.map": "/mimikyu/static/css/main.7a67d8a2.chunk.css.map",
+    "static/js/2.341d9a15.chunk.js.LICENSE.txt": "/mimikyu/static/js/2.341d9a15.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.548d30e5.js",
+    "static/js/2.341d9a15.chunk.js",
+    "static/css/main.7a67d8a2.chunk.css",
+    "static/js/main.066f17f3.chunk.js"
+  ]
+}
