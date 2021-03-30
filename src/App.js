@@ -1,24 +1,71 @@
-import logo from './logo.svg';
-import './App.css';
+import React, {Suspense, useRef} from "react";
+import { Canvas, useFrame} from "react-three-fiber";
+import HtmlContent from "./components/HTMLContent/htmlContent";
+import Mimikyu from "./components/mimikyu/mimikyu";
+import "./App.css";
+
+
+const Box = () => {
+
+  const meshBox = useRef()
+
+  useFrame(() => (meshBox.current.rotation.y += 0.01))
+
+  return (
+  <mesh position={[2,0,0]} ref={meshBox}>
+    <boxBufferGeometry attach="geometry"/>
+    <meshLambertMaterial attach="material" color="hotpink"/>
+  </mesh>
+  )
+}
+
+const Plane = () => {
+  return (
+  <mesh position={[0, -2 ,0]} rotation={[-Math.PI/2, 0, 0]}>
+    <planeBufferGeometry attach="geometry" args={[ 2 , 2]}/>
+    <meshLambertMaterial attach="material" color="seafoamgreen"/>
+  </mesh>
+  )
+}
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+    <Canvas>
+      <ambientLight intensity={0.5} />
+      <spotLight
+        position={[10,15,10]}
+        angle={0.3}
+      />
+        <Suspense fallback={null}>
+          <Mimikyu position={[0,-2,0]}/>
+        </Suspense>
+      <Plane/>
+      <HtmlContent>
+        <div className="container">
+        <h1>
+            Mimikyu
+        </h1>
+        <div className="text-container">
+          <div className="description-container">
+          <p>
+          Mimikyu is a small Pokémon whose body is almost entirely hidden under an old rag. Its small size makes it one of, if not the shortest Ghost-type. 
+          <br/>
+          <br/>
+          Its beady black eyes are visible through holes in the body of its disguise, and the fringe of an amorphous foot or lower body is visible under the hem. Occasionally, it will also extend a black appendage from under its rag. The veil itself resembles a Pikachu. The cloth is yellow with black-tipped ears. The Pikachu face appears to be drawn with crayons, consisting of black eyes, red cheeks, and a squiggly black mouth. The head is hollow and can be used to store objects. Mimikyu also carries a small stick resembling a lightning bolt to create a tail for its costume. When its disguise is damaged, the costume's head droops limply backward, revealing Mimikyu's ruse. Larger rips in the costume are accompanied by shadowy vapors pouring out from whatever is hidden within.
+          <br/>
+          <br/>
+          A lonely Pokémon, Mimikyu is always covered by its disguise. It is unknown what Mimikyu's true appearance looks like. Since this Pokémon is weakened by sunlight, it is rumored that the veil is used for protection. It is believed that seeing its true form will cause a mysterious illness or even a painful death. Because of this, Mimikyu will become agitated and violently stop anyone from attempting to look underneath its rag. Mimikyu's disguise is modeled after Pikachu because of the popularity of Pikachu-styled merchandise, thinking that its disguise would allow it to make friends with people.
+          <br/>
+          <br/>
+          Unfortunately, this attempt makes its disguise look more creepy. The rag it wears allows Mimikyu to avoid attacks. If its rag is damaged or its neck is broken, it will spend all night patching it in front of a mirror as if its life depends on it. Repairing the rag correctly is often difficult for Mimikyu, so it cries a lot on the inside. It then seeks revenge on the one that damaged it, fearing that its true identity could have been exposed. Unforgiving, Mimikyu will take down the culprit to the point of costing its life in the process. 
+          </p>
+          </div>
+        </div>
+        </div>
+      </HtmlContent>
+    </Canvas>
+    </>
   );
 }
 

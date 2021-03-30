@@ -1,38 +1,80 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html,
+body,
+#root {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  /* overflow: hidden; */
+  background: #1C1C1C;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, helvetica neue, helvetica, ubuntu, roboto, noto,
+    segoe ui, arial, sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+.container{
+  font-family: Roboto;
   color: white;
+  font-size: 2rem;
+  padding: 1.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+.text-container{
+  background-color: rgba(0,0,0,0.5);
+  font-weight: lighter;
+  font-style: italic;
+  border-radius: 1rem;
+  overflow-x: auto;
+  max-height: 70vh;
+  padding: 2.5rem;
+  scrollbar-width: thin; 
+  line-height: 2rem;
+  transition: max-height 0.15s ease-out;
+  font-size: 18px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hidden{
+  max-height: 0vh;
+  padding: 0;
+  transition: max-height 0.15s ease-out;
+}
+
+button{
+  background-color: transparent;
+  color: white;
+  font-size: 12px;
+  padding: 0.5rem 2rem;
+  text-transform: capitalize;
+  border-radius: 3rem;
+  border: 1px solid #fff;
+  text-transform: capitalize;
+  margin: 1rem 0;
+  font-weight: bold;
+  transition: ease-in-out 0.2s;
+}
+
+button:focus{
+  outline: none;
+}
+
+button:hover{
+  color: black;
+  background-color: white;
+  transition: ease-in-out 0.2s;
+}
+
+h2{
+  margin: 1rem 0;
 }
